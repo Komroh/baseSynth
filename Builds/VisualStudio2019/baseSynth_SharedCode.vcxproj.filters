@@ -5,6 +5,12 @@
     <Filter Include="baseSynth\Source">
       <UniqueIdentifier>{D55FAA3C-49AE-D993-2B2F-EC3644C43D88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="baseSynth\UI">
+      <UniqueIdentifier>{21C5543A-17CC-55DD-3D12-CD78AAC6690C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="baseSynth\Data">
+      <UniqueIdentifier>{3BF5A423-1986-C7F5-29FB-D4766D96208A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="baseSynth">
       <UniqueIdentifier>{22C0E958-F408-B55A-24B5-595218532476}</UniqueIdentifier>
     </Filter>
@@ -477,6 +483,12 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\SynthVoice.cpp">
       <Filter>baseSynth\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\UI\AdsrComponent.cpp">
+      <Filter>baseSynth\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\AdsrData.cpp">
+      <Filter>baseSynth\Data</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
       <Filter>JUCE Modules\juce_audio_basics\buffers</Filter>
@@ -2702,6 +2714,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\SynthVoice.h">
       <Filter>baseSynth\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UI\AdsrComponent.h">
+      <Filter>baseSynth\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\AdsrData.h">
+      <Filter>baseSynth\Data</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\..\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h">
       <Filter>JUCE Modules\juce_audio_basics\audio_play_head</Filter>

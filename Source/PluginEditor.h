@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
+#include"UI/AdsrComponent.h"
 
 //==============================================================================
 /**
@@ -26,28 +27,20 @@ public:
 
 private:
 
-    void setSliderParams(juce::Slider& slider);
 
     juce::ComboBox oscSelector;
-    juce::Slider attackSlider;
-    juce::Slider decaySlider;
-    juce::Slider sustainSlider;
-    juce::Slider releaseSlider;
     juce::Slider gainSlider;
 
 
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     BaseSynthAudioProcessor& audioProcessor;
-
+    AdsrComponent adsrUi;
     using SlidderAttachment = juce::AudioProcessorValueTreeState::SliderAttachment;
     using ComboBoxAttachment = juce::AudioProcessorValueTreeState::ComboBoxAttachment;
 
     std::unique_ptr<ComboBoxAttachment> oscAttachment;
-    std::unique_ptr<SlidderAttachment> attackAttachment;
-    std::unique_ptr<SlidderAttachment> decaykAttachment;
-    std::unique_ptr<SlidderAttachment> sustainAttachment;
-    std::unique_ptr<SlidderAttachment> releasekAttachment;
+   
     std::unique_ptr<SlidderAttachment> gainAttachment;
 
    

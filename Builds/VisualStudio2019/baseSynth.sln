@@ -1,18 +1,17 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "baseSynth_StandalonePlugin", "baseSynth_StandalonePlugin.vcxproj", "{65F6DED2-6522-2823-A071-BC0D9A9400A2}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2019
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "baseSynth - Standalone Plugin", "baseSynth_StandalonePlugin.vcxproj", "{65F6DED2-6522-2823-A071-BC0D9A9400A2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{004F1E9D-8FCD-1B4A-E2D4-F91C0A1F1DCC} = {004F1E9D-8FCD-1B4A-E2D4-F91C0A1F1DCC}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "baseSynth_VST3", "baseSynth_VST3.vcxproj", "{62ED767B-90AA-9D92-3D1F-C18B41370468}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "baseSynth - VST3", "baseSynth_VST3.vcxproj", "{62ED767B-90AA-9D92-3D1F-C18B41370468}"
 	ProjectSection(ProjectDependencies) = postProject
 		{004F1E9D-8FCD-1B4A-E2D4-F91C0A1F1DCC} = {004F1E9D-8FCD-1B4A-E2D4-F91C0A1F1DCC}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "baseSynth_SharedCode", "baseSynth_SharedCode.vcxproj", "{004F1E9D-8FCD-1B4A-E2D4-F91C0A1F1DCC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "baseSynth - Shared Code", "baseSynth_SharedCode.vcxproj", "{004F1E9D-8FCD-1B4A-E2D4-F91C0A1F1DCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,14 +19,14 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{65F6DED2-6522-2823-A071-BC0D9A9400A2}.Debug|x64.ActiveCfg = Debug|x64
-		{65F6DED2-6522-2823-A071-BC0D9A9400A2}.Debug|x64.Build.0 = Debug|x64
-		{65F6DED2-6522-2823-A071-BC0D9A9400A2}.Release|x64.ActiveCfg = Release|x64
-		{65F6DED2-6522-2823-A071-BC0D9A9400A2}.Release|x64.Build.0 = Release|x64
 		{62ED767B-90AA-9D92-3D1F-C18B41370468}.Debug|x64.ActiveCfg = Debug|x64
 		{62ED767B-90AA-9D92-3D1F-C18B41370468}.Debug|x64.Build.0 = Debug|x64
 		{62ED767B-90AA-9D92-3D1F-C18B41370468}.Release|x64.ActiveCfg = Release|x64
 		{62ED767B-90AA-9D92-3D1F-C18B41370468}.Release|x64.Build.0 = Release|x64
+		{65F6DED2-6522-2823-A071-BC0D9A9400A2}.Debug|x64.ActiveCfg = Debug|x64
+		{65F6DED2-6522-2823-A071-BC0D9A9400A2}.Debug|x64.Build.0 = Debug|x64
+		{65F6DED2-6522-2823-A071-BC0D9A9400A2}.Release|x64.ActiveCfg = Release|x64
+		{65F6DED2-6522-2823-A071-BC0D9A9400A2}.Release|x64.Build.0 = Release|x64
 		{004F1E9D-8FCD-1B4A-E2D4-F91C0A1F1DCC}.Debug|x64.ActiveCfg = Debug|x64
 		{004F1E9D-8FCD-1B4A-E2D4-F91C0A1F1DCC}.Debug|x64.Build.0 = Debug|x64
 		{004F1E9D-8FCD-1B4A-E2D4-F91C0A1F1DCC}.Release|x64.ActiveCfg = Release|x64
@@ -35,8 +34,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9E5942AC-9BB9-409F-8545-770F55698A62}
 	EndGlobalSection
 EndGlobal

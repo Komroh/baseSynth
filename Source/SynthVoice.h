@@ -13,6 +13,8 @@
 #include <JuceHeader.h>
 #include "SynthSound.h"
 
+#include "AdsrData.h"
+
 class SynthVoice : public juce::SynthesiserVoice
 {
 public:
@@ -31,8 +33,8 @@ private :
     juce::dsp::Oscillator<float> osc{ [](float x) { return std::sin(x); } };
     juce::dsp::Gain<float> voiceGain;
     int totalNumOutputChannels;
-    juce::ADSR adsr;
-    juce::ADSR::Parameters adsrParams;
+    AdsrData adsr;
+    
     juce::AudioBuffer<float> oscBuffer;
     bool isPrepared{ false };
 };

@@ -45,8 +45,8 @@ void AdsrComponent::resized()
     // components that your component contains..
     const auto bounds = getLocalBounds().reduced(10);
     const auto padding = 10;
-    const auto sliderWidth = bounds.getWidth() / 5 - padding;
-    const auto sliderHeight = bounds.getWidth() / 5 - padding;
+    const auto sliderWidth = bounds.getWidth() / 4 - padding;
+    const auto sliderHeight = bounds.getHeight();
     const auto sliderStartX = 0;
     const auto sliderStartY = bounds.getHeight() / 2 - (sliderHeight / 2);
     attackSlider.setBounds(sliderStartX, sliderStartY, sliderWidth, sliderHeight);

@@ -161,10 +161,17 @@ void BaseSynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
             //Osc controls
             //ADSR
             //LFO
-            std::cout << *valueTree.getRawParameterValue("DEC") << std::endl;
-            std::cout << valueTree.getParameter("DEC")->getValue() << std::endl;
-            voice->updateADSR( valueTree.getParameter("ATK")->getValue(), *valueTree.getRawParameterValue("DEC"), valueTree.getParameter("SUS")->getValue(), valueTree.getParameter("REL")->getValue());
+
+            auto attack = static_cast<juce::AudioParameterFloat*>(valueTree.getParameter("ATK"))->get();
+            auto decay = static_cast<juce::AudioParameterFloat*>(valueTree.getParameter("DEC"))->get();
+            auto sustain = static_cast<juce::AudioParameterFloat*>(valueTree.getParameter("SUS"))->get();
+            auto release = static_cast<juce::AudioParameterFloat*>(valueTree.getParameter("REL"))->get();
+
+            auto choice = static_cast<juce::AudioParameterChoice*>(valueTree.getParameter("OSC1"))->getIndex();
+            
+            voice->updateADSR(attack, decay, sustain, release);
             voice->updateGain(valueTree.getParameter("GAN")->getValue());
+            voice->getOscilator().setWaveType(choice);
         }
     }
     synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
@@ -211,7 +218,8 @@ juce::AudioProcessorValueTreeState::ParameterLayout BaseSynthAudioProcessor::cre
 
     std::vector < std::unique_ptr<juce::RangedAudioParameter>> params;
     juce::StringArray oscArray{ "Sine", "Saw", "Square" };
-    params.push_back(std::make_unique < juce::AudioParameterChoice>("OSC", "Oscilators", oscArray, 0));
+    params.push_back(std::make_unique < juce::AudioParameterChoice>("OSC1", "Oscilators1", oscArray, 0));
+   
 
     //ADSR params
     params.push_back(std::make_unique<juce::AudioParameterFloat>("ATK", "Attack", juce::NormalisableRange<float> {0.1f, 1.0f}, 0.1f));

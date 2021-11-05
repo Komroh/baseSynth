@@ -11,19 +11,18 @@
 
 //==============================================================================
 BaseSynthAudioProcessorEditor::BaseSynthAudioProcessorEditor(BaseSynthAudioProcessor& p)
-    : AudioProcessorEditor(&p), audioProcessor(p), adsrUi(audioProcessor.valueTree)
+    : AudioProcessorEditor(&p), audioProcessor(p), adsrUi(audioProcessor.valueTree), osc(audioProcessor.valueTree, "OSC1")
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize(400, 300);
 
     
-    using ComboBoxAttachment = juce::AudioProcessorValueTreeState::ComboBoxAttachment;
-    oscAttachment = std::make_unique<ComboBoxAttachment>(audioProcessor.valueTree, "OSC", oscSelector);
+   
     gainAttachment = std::make_unique<SlidderAttachment>(audioProcessor.valueTree, "GAN", gainSlider);
 
     addAndMakeVisible(adsrUi);
-
+    addAndMakeVisible(osc);
     gainSlider.setSliderStyle(juce::Slider::SliderStyle::LinearVertical);
     gainSlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, 50, 25);
     addAndMakeVisible(gainSlider);
@@ -45,10 +44,10 @@ void BaseSynthAudioProcessorEditor::paint (juce::Graphics& g)
 
 void BaseSynthAudioProcessorEditor::resized()
 {
-   
-    adsrUi.setBounds(getLocalBounds());
+    osc.setBounds(10,10,100,30);
+    adsrUi.setBounds(getWidth()/2, 0, getWidth()/2, getHeight());
     
-    //gainSlider.setBounds(adsrUi.getRight() + padding, sliderStartY, sliderWidth, sliderHeight);
+    gainSlider.setBounds(80, 60, 20, getLocalBounds().getHeight()/2);
 }
 
 
